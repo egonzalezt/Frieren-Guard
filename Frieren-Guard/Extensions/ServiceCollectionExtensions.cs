@@ -14,5 +14,9 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IHealthCheckPublisher, HealthCheckPublisher>();
         var frierenGuardConfiguration = new FrierenGuardConfiguration();
         configuration.GetSection("FrierenAuthConfiguration").Bind(frierenGuardConfiguration);
+        services.Configure<HealthCheckPublisherOptions>(options =>
+        {
+            options.Period = TimeSpan.FromMinutes(frierenGuardConfiguration.IntervalSeconds);
+        });
     }
 }
