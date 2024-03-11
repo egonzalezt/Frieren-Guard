@@ -9,7 +9,7 @@
     <Title>Frieren Guard</Title>
     <RepositoryUrl>https://github.com/egonzalezt/Frieren-Guard</RepositoryUrl>
     <PackageTags>healthchecks</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

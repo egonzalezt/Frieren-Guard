@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IHealthCheckNotifier, HealthCheckNotifier>();
         services.AddSingleton<IHealthCheckPublisher, HealthCheckPublisher>();
         var frierenGuardConfiguration = new FrierenGuardConfiguration();
-        configuration.GetSection("FrierenAuthConfiguration").Bind(frierenGuardConfiguration);
+        configuration.GetSection("FrierenGuardConfiguration").Bind(frierenGuardConfiguration);
         services.Configure<HealthCheckPublisherOptions>(options =>
         {
             options.Period = TimeSpan.FromMinutes(frierenGuardConfiguration.IntervalSeconds);
